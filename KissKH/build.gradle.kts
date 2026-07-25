@@ -1,6 +1,15 @@
 // ! Bu araç @ByAyzen tarafından | @CS-Karma için yazılmıştır!
 version = 4
 
+android {
+    namespace = "com.byayzen"
+
+    lint {
+        abortOnError = false
+        disable.add("PropertyEscape")
+    }
+}
+
 cloudstream {
     authors     = listOf("kraptor" ,"ByAyzen")
     language    = "en"
