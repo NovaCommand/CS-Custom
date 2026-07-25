@@ -36,6 +36,7 @@ class KissKH : MainAPI() {
         "&type=2&sub=0&country=2&status=0&order=2" to "Latest Updated Movies",
         "&type=1&sub=0&country=2&status=0&order=1" to "Popular TV Series",
         "&type=1&sub=0&country=2&status=0&order=2" to "Latest Updated TV Series",
+        "&type=1&sub=0&country=3&status=0&order=2" to "Latest Japanese Series",
         "&type=3&sub=0&country=0&status=0&order=1" to "Popular Anime",
         "&type=3&sub=0&country=0&status=0&order=2" to "Latest Updated Anime",
         "&type=4&sub=0&country=0&status=0&order=1" to "Popular Hollywood",
