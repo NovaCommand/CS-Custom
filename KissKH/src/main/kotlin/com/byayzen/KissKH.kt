@@ -29,19 +29,26 @@ class KissKH : MainAPI() {
     override val supportedTypes = setOf(TvType.TvSeries, TvType.Movie, TvType.AsianDrama)
 
     override val mainPage = mainPageOf(
-        "&type=0&sub=0&country=0&status=0&order=2" to "Latest Releases",
-        "&type=0&sub=0&country=2&status=0&order=1" to "Best Korean Dramas",
-        "&type=0&sub=0&country=1&status=0&order=1" to "Best Chinese Dramas",
-        "&type=2&sub=0&country=2&status=0&order=1" to "Popular Movies",
-        "&type=2&sub=0&country=2&status=0&order=2" to "Latest Updated Movies",
-        "&type=1&sub=0&country=2&status=0&order=1" to "Popular TV Series",
-        "&type=1&sub=0&country=2&status=0&order=2" to "Latest Updated TV Series",
-        "&type=1&sub=0&country=3&status=0&order=2" to "Latest Japanese Series",
-        "&type=3&sub=0&country=0&status=0&order=1" to "Popular Anime",
-        "&type=3&sub=0&country=0&status=0&order=2" to "Latest Updated Anime",
-        "&type=4&sub=0&country=0&status=0&order=1" to "Popular Hollywood",
-        "&type=4&sub=0&country=0&status=0&order=2" to "Latest Updated Hollywood",
-        "&type=0&sub=0&country=0&status=3&order=2" to "Coming Soon"
+        // Japan
+        "&type=1&sub=0&country=3&status=0&order=2" to "Latest J-Series",
+        "&type=2&sub=0&country=3&status=0&order=2" to "Latest J-Movies",
+        "&type=1&sub=0&country=3&status=2&order=2" to "Completed J-Series",
+        "&type=2&sub=0&country=3&status=2&order=2" to "Completed J-Movies",
+        // South Korea
+        "&type=1&sub=0&country=2&status=0&order=2" to "Latest K-Series",
+        "&type=2&sub=0&country=2&status=0&order=2" to "Latest K-Movies",
+        "&type=1&sub=0&country=2&status=2&order=2" to "Completed K-Series",
+        "&type=2&sub=0&country=2&status=2&order=2" to "Completed K-Movies",
+        // China
+        "&type=1&sub=0&country=1&status=0&order=2" to "Latest C-Series",
+        "&type=2&sub=0&country=1&status=0&order=2" to "Latest C-Movies",
+        "&type=1&sub=0&country=1&status=2&order=2" to "Completed C-Series",
+        "&type=2&sub=0&country=1&status=2&order=2" to "Completed C-Movies",
+        // Anime (Japan, type=3) & DongHua (China, type=3)
+        "&type=3&sub=0&country=3&status=0&order=2" to "Latest Anime",
+        "&type=3&sub=0&country=3&status=2&order=2" to "Completed Anime",
+        "&type=3&sub=0&country=1&status=0&order=2" to "Latest DongHua",
+        "&type=3&sub=0&country=1&status=2&order=2" to "Completed DongHua",
     )
 
 
