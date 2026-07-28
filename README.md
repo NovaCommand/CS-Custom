@@ -1,50 +1,57 @@
-<div align="center">
+# CS-Custom
 
-# `Cs-Karma`
+CloudStream3 custom repository currently publishing the `KissKH` provider.
 
-`Kısa Kodlar`: **cskarma** ya da **karmator**
-<br>
-`Short Codes`: **cskarma** or **karmator**
+## Add This Repo to CloudStream
 
-<hr>
+Use this repository URL inside CloudStream:
 
-Uygulamanın kurulu olduğu cihazda alttaki logoya tıklayıp kurulumu gerçekleştirebilirsiniz. 
-<br>
-<br>
-You can install the repository by clicking the logo down below on the device where the app is installed.
+`cloudstreamrepo://raw.githubusercontent.com/NovaCommand/CS-Custom/personal_build/repo.json`
 
-[<img alt="Cs-Karma logo" width="200px" src="https://raw.githubusercontent.com/Kraptor123/Cs-Karma/refs/heads/master/.github/logo/cskarma.png"/>](https://kraptor123.github.io/redirect/?r=cloudstreamrepo://raw.githubusercontent.com/Kraptor123/cs-Karma/refs/heads/master/repo.json)
+Direct `repo.json` link:
 
-<h2 align="center">
-<br>
-  <a href="https://linktr.ee/kraptorcs">Tüm Linklerim</a>
-  <br>
-  <br>
-  <a href="https://linktr.ee/kraptorcs">All Of My Links</a>
-</h2>
+`https://raw.githubusercontent.com/NovaCommand/CS-Custom/personal_build/repo.json`
 
-# `Geliştiriciler` | `Developers`
+Main plugin index (`plugins.json`):
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/Kraptor123">
-        <img src="https://avatars.githubusercontent.com/u/89366989?v=4" width="80;" alt="Kraptor"/><br />
-        <sub><b>kraptor</b></sub>
-        </a>
-    </td>
-     <td align="center">
-      <a href="https://github.com/ByAyzen">
-        <img src="https://avatars.githubusercontent.com/u/189399597?v=4" width="80;" alt="ByAyzen"/><br />
-        <sub><b>ByAyzen</b></sub>
-        </a>
-    </td>
-     <td align="center">
-      <a href="https://github.com/trup40">
-        <img src="https://avatars.githubusercontent.com/u/34142302?v=4" width="80;" alt="Eagle"/><br />
-        <sub><b>Eagle</b></sub>
-        </a>
-  </tr>
-</table>
+`https://raw.githubusercontent.com/NovaCommand/CS-Custom/personal_build/plugins.json`
 
-</div>
+## Repository Information
+
+- GitHub: `https://github.com/NovaCommand/CS-Custom`
+- Active module: `KissKH/`
+- Plugin artifact: `https://raw.githubusercontent.com/NovaCommand/CS-Custom/personal_build/KissKH.cs3`
+
+## Current Plugin
+
+`KissKH`
+
+- Language: `en`
+- Status: `1` (enabled)
+- Version: `4`
+- Type: `AsianDrama`
+- Authors: `kraptor`, `ByAyzen`
+
+## Build Commands (Windows PowerShell)
+
+```powershell
+./gradlew.bat build
+./gradlew.bat derle
+./gradlew.bat :KissKH:build
+./gradlew.bat clean
+```
+
+Use `--info` or `--stacktrace` for debugging build/packaging issues.
+
+## Project Layout
+
+- `KissKH/src/main/kotlin/com/byayzen/KissKH.kt` -> provider logic (`getMainPage`, `search`, `load`, `loadLinks`)
+- `KissKH/src/main/kotlin/com/byayzen/KissKHPlugin.kt` -> plugin entrypoint
+- `KissKH/src/main/kotlin/com/byayzen/SubDecryptor.kt` -> subtitle decryption helper
+- `repo.json` and `plugins.json` -> CloudStream repository and plugin index metadata
+
+## CloudStream Docs
+
+- Main wiki: https://cloudstream.miraheze.org/wiki/Main_Page
+- Creating extensions: https://cloudstream.miraheze.org/wiki/Creating_extensions
+- Scraping tutorial: https://cloudstream.miraheze.org/wiki/Scraping_tutorial
