@@ -7,13 +7,14 @@ concurrency:
 on:
   push:
     branches:
-      - master
-      - main
+      - personal_build
     paths-ignore:
       - '*.md'
       - '.github/workflows/**'
       - 'repo.json'
+      - 'plugins.json'
       - 'DomainCheck.py'
+      - '*.cs3'
 
 permissions:
   contents: write
@@ -25,16 +26,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          path: "src"
-
-      - name: Checkout builds
-        uses: actions/checkout@v4
-        with:
-          ref: "builds"
-          path: "builds"
-
-      - name: Clean old builds
-        run: rm -f $GITHUB_WORKSPACE/builds/*.cs3
+          ref: personal_build
 
       - name: Setup JDK 21
         uses: actions/setup-java@v4
@@ -48,20 +40,25 @@ jobs:
 
       - name: Build Plugins
         run: |
-          cd $GITHUB_WORKSPACE/src
           chmod +x gradlew
           ./gradlew make makePluginsJson
-          cp **/build/*.cs3 $GITHUB_WORKSPACE/builds || true
-          cp build/plugins.json $GITHUB_WORKSPACE/builds || true
 
-      - name: Push builds
+      - name: Copy artifacts and patch plugins.json
+        run: |
+          # Copy built .cs3 files to repo root
+          find . -path './.git' -prune -o -name '*.cs3' -print | xargs -I{} cp {} . 2>/dev/null || true
+          # Fix branch name in auto-generated plugins.json (Gradle plugin hardcodes 'builds')
+          if [ -f build/plugins.json ]; then
+            sed 's|/builds/|/personal_build/|g' build/plugins.json > plugins.json
+          fi
+
+      - name: Push artifacts to personal_build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cd $GITHUB_WORKSPACE/builds
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add .
+          git add *.cs3 plugins.json
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
-          git commit --amend -m "Build $GITHUB_SHA" || git commit -m "Build $GITHUB_SHA" || exit 0
-          git push origin builds --force
+          git commit -m "Build $GITHUB_SHA" || exit 0
+          git push origin personal_build
