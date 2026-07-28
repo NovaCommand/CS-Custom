@@ -10,7 +10,7 @@
             "ByAyzen"
         ],
         "description": "Watch drama online in high quality. Free download high quality drama. Various formats from 240p to 720p HD (or even 1080p). Feel Free To Watch!",
-        "fileSize": 39887,
+        "fileSize": 40001,
         "repositoryUrl": "https://github.com/NovaCommand/CS-Custom",
         "language": "en",
         "tvTypes": [
@@ -18,7 +18,6 @@
         ],
         "iconUrl": "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://kisskh.id/&size=256",
         "apiVersion": 1,
-        "fileHash": "sha256-0236ee31898634f75536580285145deeacde208578274a98ff52739dd2fa464b"
+        "fileHash": "sha256-f4180f248166c98cae92a37503e118fd81ecf5f8dc671881a37efeb821fb284c"
     }
 ]
-
