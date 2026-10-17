@@ -2,7 +2,7 @@
 version = 4
 
 android {
-    namespace = "com.byayzen"
+    namespace = "com.novacommand.kisskh"
 
     lint {
         abortOnError = false
